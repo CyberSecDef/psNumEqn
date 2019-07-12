@@ -8,16 +8,14 @@
 Begin{
 	
 	class psNumEqn{
-		[int64]$limit = 10
 		$seen = @{}
 		$operators = (new-object system.collections.stack)
-		[int64]$minimum
+		[int64]$minimum = 10
 		[int64]$INT_MAX = 2147483647
 		[int64]$number = 0
 		[int64]$digit = 0
 		
 		psNumEqn($limit){
-			$this.limit = $limit
 			$this.minimum = $limit
 		}
 		
@@ -189,10 +187,8 @@ Begin{
 
 				$expression = $expression + $num; 
 
-				# print the expression 
 				write-host "Expression: $($expression)" 
 			}else{
-				# not possible within 10 digits. 
 				write-host "Expression not found!"
 			}
 		} 
